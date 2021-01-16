@@ -1,6 +1,5 @@
 class AppError extends Error {
   constructor(message, statusCode) {
-    console.log('message', message);
     //call parent constructor which sets the message property which our class
     //then inherits
     super(message);
@@ -10,7 +9,6 @@ class AppError extends Error {
     this.isOperational = true;
     //only keep frames below the constructor in error message
     Error.captureStackTrace(this, this.constructor);
-    console.log(this);
   }
 }
 

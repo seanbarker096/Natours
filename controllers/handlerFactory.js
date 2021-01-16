@@ -65,7 +65,6 @@ exports.getOne = (Model, popOptions) =>
         data: doc,
       },
     });
-    console.log(req.user);
   });
 
 exports.getAll = (Model) =>

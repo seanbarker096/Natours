@@ -1,4 +1,5 @@
 const csp = require('express-csp');
+const compression = require('compression');
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
@@ -129,13 +130,10 @@ app.use(
     ],
   })
 );
+
+app.use(compression());
 //serve our static files
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use((req, res, next) => {
-  console.log(req.cookies);
-  next();
-});
 
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);

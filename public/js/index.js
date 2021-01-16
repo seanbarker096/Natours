@@ -21,7 +21,6 @@ if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    console.log('from login', email, password);
     e.preventDefault();
     login(email, password);
   });

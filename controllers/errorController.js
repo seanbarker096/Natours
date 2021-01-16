@@ -89,7 +89,6 @@ module.exports = (err, req, res, next) => {
   //these all create our AppError object and sets the isOperational prop
   //The value of this (true./false) determines which of the 2 errors the user
   //will receive.
-  console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
